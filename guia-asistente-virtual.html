@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Gratuita: Configura Tu Asistente Virtual con IA | Sutilde</title>
+  <meta name="description" content="Descarga gratis nuestra guía paso a paso para configurar tu propio asistente virtual con inteligencia artificial. Sin conocimientos técnicos.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Guía Gratuita: Tu Asistente Virtual con IA">
+  <meta property="og:description" content="Aprende a configurar un asistente de IA que trabaje para ti 24/7. Guía paso a paso.">
+  <meta property="og:image" content="https://sutilde.com/assets/guia-preview.png">
+  <meta property="og:type" content="website">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary: #B066FF;
+      --secondary: #FF3366;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --gradient: linear-gradient(135deg, #B066FF 0%, #FF3366 100%);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+    }
+    
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+      animation: pulse 15s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+    }
+    
+    .hero-content {
+      color: white;
+    }
+    
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: brightness(0) invert(1);
+    }
+    
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    
+    h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+    
+    @media (max-width: 900px) {
+      .subtitle {
+        margin: 0 auto 30px;
+      }
+    }
+    
+    .benefits {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    
+    .benefits li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    
+    @media (max-width: 900px) {
+      .benefits li {
+        justify-content: center;
+      }
+    }
+    
+    .benefits li::before {
+      content: '✓';
+      width: 24px;
+      height: 24px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    
+    /* Form Card */
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    
+    .form-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    
+    .form-subtitle {
+      color: #666;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--dark);
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(176, 102, 255, 0.1);
+    }
+    
+    .form-group input::placeholder {
+      color: #aaa;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--gradient);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 8px;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(176, 102, 255, 0.4);
+    }
+    
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .privacy-note {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 16px;
+    }
+    
+    .privacy-note a {
+      color: var(--primary);
+    }
+    
+    /* Preview Section */
+    .preview-section {
+      padding: 80px 20px;
+      background: white;
+    }
+    
+    .preview-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .section-title {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+    
+    .section-subtitle {
+      color: #666;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    @media (max-width: 700px) {
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .preview-card {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: left;
+    }
+    
+    .preview-card .icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+    
+    .preview-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .preview-card p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    /* Footer CTA */
+    .footer-cta {
+      background: var(--dark);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .footer-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .footer-cta p {
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
+    
+    .footer-cta .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    
+    .footer-cta .cta-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .footer-links {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    
+    /* Success State */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    
+    .success-message.show {
+      display: block;
+    }
+    
+    .success-message .icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    
+    .success-message h2 {
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    
+    .success-message p {
+      color: #666;
+      margin-bottom: 24px;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .form-container.hide {
+      display: none;
+    }
+    
+    /* Loading State */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 10px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <img src="logo.png" alt="Sutilde" class="logo">
+        <span class="badge">📘 Guía Gratuita</span>
+        <h1>Configura Tu Propio Asistente Virtual con IA</h1>
+        <p class="subtitle">Guía paso a paso para tener un asistente de inteligencia artificial trabajando para ti 24/7. Sin conocimientos técnicos.</p>
+        <ul class="benefits">
+          <li>16 páginas de contenido práctico</li>
+          <li>Instrucciones detalladas con capturas</li>
+          <li>Código listo para copiar y pegar</li>
+          <li>Funciona en Mac, Windows y Linux</li>
+        </ul>
+      </div>
+      
+      <div class="form-card">
+        <div class="form-container" id="formContainer">
+          <h2 class="form-title">Descarga la Guía Gratis</h2>
+          <p class="form-subtitle">Completa tus datos y recibe el PDF al instante</p>
+          
+          <form id="leadForm">
+            <div class="form-group">
+              <label for="name">Tu nombre</label>
+              <input type="text" id="name" name="name" placeholder="Ej: María García" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Empresa</label>
+              <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="size">Tamaño de la empresa</label>
+              <select id="size" name="size" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1-10">1-10 empleados</option>
+                <option value="11-50">11-50 empleados</option>
+                <option value="51-200">51-200 empleados</option>
+                <option value="201-500">201-500 empleados</option>
+                <option value="500+">Más de 500 empleados</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+              Descargar Guía Gratis →
+            </button>
+          </form>
+          
+          <p class="privacy-note">
+            🔒 Tus datos están seguros. No spam. <a href="#">Política de privacidad</a>
+          </p>
+        </div>
+        
+        <div class="success-message" id="successMessage">
+          <div class="icon">🎉</div>
+          <h2>¡Listo! Tu guía está lista</h2>
+          <p>También te enviamos una copia a tu correo.</p>
+          <a href="guia-clawdbot.html" class="download-btn" target="_blank">
+            📥 Descargar PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="preview-section">
+    <div class="preview-container">
+      <h2 class="section-title">¿Qué aprenderás?</h2>
+      <p class="section-subtitle">Todo lo que necesitas para automatizar tu trabajo con IA</p>
+      
+      <div class="preview-grid">
+        <div class="preview-card">
+          <div class="icon">🛠️</div>
+          <h3>Instalación Paso a Paso</h3>
+          <p>Desde cero hasta tener tu asistente funcionando, sin complicaciones técnicas.</p>
+        </div>
+        <div class="preview-card">
+          <div class="icon">⚙️</div>
+          <h3>Configuración Personalizada</h3>
+          <p>Adapta el asistente a tus necesidades: correo, calendario, tareas y más.</p>
+        </div>
+        <div class="preview-card">
+          <div class="icon">🚀</div>
+          <h3>Casos de Uso Prácticos</h3>
+          <p>Ejemplos reales de cómo usar tu asistente para ahorrar horas cada semana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="footer-cta">
+    <h2>¿Quieres implementación profesional?</h2>
+    <p>En Sutilde configuramos asistentes de IA para empresas líderes.</p>
+    <a href="https://sutilde.com" class="cta-btn">Conoce nuestros servicios →</a>
+    
+    <div class="footer-links">
+      <a href="https://sutilde.com">Sutilde</a>
+      <a href="mailto:hola@sutilde.com">hola@sutilde.com</a>
+      <span>© 2026 Sutilde. Todos los derechos reservados.</span>
+    </div>
+  </section>
+  
+  <script>
+    const form = document.getElementById('leadForm');
+    const formContainer = document.getElementById('formContainer');
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Webhook URL - Replace with actual Make/n8n webhook
+    const WEBHOOK_URL = 'https://hook.us1.make.com/WEBHOOK_ID_HERE';
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="loading"></span>Enviando...';
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        size: document.getElementById('size').value,
+        source: 'guia-asistente-virtual',
+        timestamp: new Date().toISOString()
+      };
+      
+      try {
+        // Send to webhook
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+          mode: 'no-cors' // Required for cross-origin webhooks
+        });
+        
+        // Show success (we assume success since no-cors doesn't give response)
+        formContainer.classList.add('hide');
+        successMessage.classList.add('show');
+        
+        // Track conversion (if analytics is set up)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'generate_lead', {
+            'event_category': 'engagement',
+            'event_label': 'guia_asistente_virtual'
+          });
+        }
+        
+      } catch (error) {
+        console.error('Error:', error);
+        // Still show success since no-cors mode
+        formContainer.classList.add('hide');
+        successMessage.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>
